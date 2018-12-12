@@ -71,9 +71,9 @@ void applyEntityGlow(mach_vm_address_t imgbase, mach_vm_address_t startAddress, 
         }
         */
         if (health == 0) {
-            health = 100;
+            health = 120;
         }
-        Color color = {float((100 - health) / 100.0), float((health) / 100.0), 0.0f, 0.8f};
+        Color color = {float((120 - health) / 120.0), float((health) / 120.0), 0.0f, 0.8f};
         
         // We don't need to call an extra function to just write to memory (Keep the code clean)
         uint64_t glowBase = startAddress + (0x40 * glowIndex);
