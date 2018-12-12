@@ -61,7 +61,7 @@ void applyEntityGlow(mach_vm_address_t imgbase, mach_vm_address_t startAddress, 
         int glowIndex           = mem->read<int>(memoryAddress + m_iGlowIndex);
         int health              = mem->read<int>(memoryAddress + 0x138);
         int playerTeamNum       = mem->read<int>(memoryAddress + 0x12C);
-
+        /*
         if (playerTeamNum == iTeamNum || playerTeamNum == 0) {
             continue;
         }
@@ -69,11 +69,10 @@ void applyEntityGlow(mach_vm_address_t imgbase, mach_vm_address_t startAddress, 
         if (playerTeamNum == 0) {
             continue;
         }
-
+        */
         if (health == 0) {
             health = 100;
         }
-        
         Color color = {float((100 - health) / 100.0), float((health) / 100.0), 0.0f, 0.8f};
         
         // We don't need to call an extra function to just write to memory (Keep the code clean)
